@@ -1,0 +1,22 @@
+{% extends 'catalog/base.html' %}
+
+{% block content %}
+<div class="col-12">
+    <div class="row">
+        <div class="col-8">
+            <img src="{{ object.image.url }}" width="100%" height="100%" alt="{{ object.name }}">
+        </div>
+        <div class="col-md-4">
+            <h2><p>{{ object.title }}</p></h2>
+            <p>{{ object.content }} </p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <p>Количество просмотров: {{ object.views_count }}</p>
+        <p>Дата создания: {{ object.date_published }}</p>
+        <p>Дата последнего измения: {{ object.date_modified }}</p>
+    </div>
+</div>
+{% endblock %}

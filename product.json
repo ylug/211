@@ -1,0 +1,52 @@
+[
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Стандартная",
+      "description": "здесь будет находится описание подписки Стандартная",
+      "category": 1,
+      "price_for_one": 250
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Стандартная плюс",
+      "description": "Здесь будет находится описание подписки Стандартная+",
+      "category": 1,
+      "price_for_one": 370
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Продвинутая",
+      "description": "Здесь будет находится описание подписки Продвинутая",
+      "category": 1,
+      "price_for_one": 550
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Премиум",
+      "description": "Здесь будет находится описание подписки Премиум",
+      "category": 1,
+      "price_for_one": 1000
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "Премиум плюс",
+      "description": "Здесь будет находится описание подписки Премиум +",
+      "category": 1,
+      "price_for_one": 1500
+    }
+  }
+]

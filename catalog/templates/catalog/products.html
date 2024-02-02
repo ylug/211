@@ -1,0 +1,42 @@
+{% extends 'catalog/base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="col-12 mb-3">
+    <a class="btn btn-outline-primary" href="{% url 'catalog:product_create' %}">Добавить продукт</a>
+</div>
+{% else %}
+<h4> Для управления подписками требуется авторизация</h4>
+{% endif %}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">{{ title }}</h1>
+</div>
+
+<div class="row text-center">
+    <div class="col">
+        {% for object in object_list %}
+        <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">{{ object }}</h4>
+            </div>
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title">{{ object.price }}<small class="text-muted fw-light"></small>
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>{{ object.info }}</li>
+
+                </ul>
+                {% if user.is_authenticated %}
+                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                    <a href="{% url 'catalog:product_detail' object.pk %}" type="button"
+                       class="btn btn-outline-primary">Подробнее</a>
+                    <a href="{% url 'catalog:product_update' object.pk %}" type="button"
+                       class="btn btn-outline-primary">Редактировать</a>
+                    <a class="btn btn-outline-danger" href="{% url 'catalog:product_delete' object.pk %}">Удалить</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
